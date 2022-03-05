@@ -9,11 +9,11 @@
     <script defer src="index.js"></script>
   </head>
   <body>
-      <div class="heading">
-      <h1>Tic-Tac-Toe</h1>
+      <div id="heading">
+      <h1>Tic-Tac-Toe™</h1>
       <h2>The Game of Kings</h2>
     </div>
-      <div class="name-entry">
+      <div id="name-entry">
           <label> Enter Player 1 Name 
           <input id="p1NameEntry" placeholder="Mario">
         </label>
@@ -21,26 +21,30 @@
           <input id="p2NameEntry" placeholder="Luigi">
           </label>
         </div>
-    <div class="frame">
+        <div id="buttons">
+            <button id="start1P" onclick="start1PGame()">Start 1P Game</button>
+            <button id="start2P" onclick="start2PGame()">Start 2P Game</button>
+        </div>
+    <div id="frame">
         <h3>Player 1: <span id="p1NameDisplay"></span></h3>
-        <h3>Player 2: <span id="p1NameDisplay"></span></h3>
+        <h3>Player 2: <span id="p2NameDisplay"></span></h3>
         <h3 id="p1NameDisplay"></h3>
         <div id="scoreboard">
             <h3>P1 Score: <span id="p1ScoreDisplay"></span></h3>
             <h3>P2 Score: <span id="p2ScoreDisplay"></span></h3>
         </div>
-        <table class="board">
-            <tr class="r1">
+        <table id="board">
+            <tr id="r1">
                 <td class="cell col1" id="cell1"></td>
                 <td class="cell col2" id="cell2"></td>
                 <td class="cell col3" id="cell3"></td>
             </tr>
-            <tr class="r2">
+            <tr id="r2">
                 <td class="cell col1" id="cell4"></td>
                 <td class="cell col2" id="cell5"></td>
                 <td class="cell col3" id="cell6"></td>
             </tr>
-            <tr class="r3">
+            <tr id="r3">
                 <td class="cell col1" id="cell7"></td>
                 <td class="cell col2" id="cell8"></td>
                 <td class="cell col3" id="cell9"></td>
