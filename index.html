@@ -9,24 +9,41 @@
     <script defer src="index.js"></script>
   </head>
   <body>
-      <h1>Tha Ultimate Test of Skill</h1>
-      <h2>You dare challenge the CPU?</h2>
+      <div class="heading">
+      <h1>Tic-Tac-Toe</h1>
+      <h2>The Game of Kings</h2>
+    </div>
+      <div class="name-entry">
+          <label> Enter Player 1 Name 
+          <input id="p1NameEntry" placeholder="Mario">
+        </label>
+        <label> Enter Player 2 Name
+          <input id="p2NameEntry" placeholder="Luigi">
+          </label>
+        </div>
     <div class="frame">
+        <h3>Player 1: <span id="p1NameDisplay"></span></h3>
+        <h3>Player 2: <span id="p1NameDisplay"></span></h3>
+        <h3 id="p1NameDisplay"></h3>
+        <div id="scoreboard">
+            <h3>P1 Score: <span id="p1ScoreDisplay"></span></h3>
+            <h3>P2 Score: <span id="p2ScoreDisplay"></span></h3>
+        </div>
         <table class="board">
             <tr class="r1">
-                <td class="cell" id="c1"></td>
-                <td class="cell" id="c2"></td>
-                <td class="cell" id="c3"></td>
+                <td class="cell col1" id="cell1"></td>
+                <td class="cell col2" id="cell2"></td>
+                <td class="cell col3" id="cell3"></td>
             </tr>
             <tr class="r2">
-                <td class="cell" id="c4"></td>
-                <td class="cell" id="c5"></td>
-                <td class="cell" id="c6"></td>
+                <td class="cell col1" id="cell4"></td>
+                <td class="cell col2" id="cell5"></td>
+                <td class="cell col3" id="cell6"></td>
             </tr>
             <tr class="r3">
-                <td class="cell" id="c7"></td>
-                <td class="cell" id="c8"></td>
-                <td class="cell" id="c9"></td>
+                <td class="cell col1" id="cell7"></td>
+                <td class="cell col2" id="cell8"></td>
+                <td class="cell col3" id="cell9"></td>
             </tr>
         </table>
     </div>
