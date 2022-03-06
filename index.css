@@ -1,0 +1,43 @@
+h1, h2, #name-entry, #buttons, #frame, #scoreboard, #board {
+    text-align: center;
+}
+
+#name-entry {
+    margin-bottom: 10px;
+}
+
+#nameDisplay, #scoreboard {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin-right: 20px;
+}
+
+.col1, .col2 {
+    border-right: 2px solid black;
+}
+
+.col2, .col3 {
+    border-left: 2px solid black
+}
+
+#r1, #r2 {
+    border-bottom: 2px solid black
+}
+
+
+/* board spacing */
+#board {
+    table-layout: fixed;
+    width: 200px;
+    border-collapse: collapse;
+    border: 5px solid black;
+    margin-top: 20px;
+  }
+  
+td {
+    padding: 20px;
+  }
+  

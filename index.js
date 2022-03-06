@@ -3,8 +3,6 @@ const gameState = {
   players: ['x', 'o'],
   p1Score: 0,
   p2Score: 0,
-  p1Name: '',
-  p2Name: '',
   status: 'Enter name(s) and choose a mode.'
 }
 
@@ -13,6 +11,9 @@ const gameState = {
 function hideInputs() {
   let nameInputs = document.getElementById("name-entry")
   nameInputs.style.display = "none"
+
+  let buttons = document.getElementById("buttons")
+  buttons.style.display = "none"
 }
 
 function get1PName() {
@@ -40,12 +41,20 @@ function start2PGame() {
   get2PNames()
 }
 
-// Render
+// connect to reset button
+function resetGame() {
+  gameState = {
+    players: ['o', 'x'],
+    status: 'playing'
+  }
+}
+
+// Render board
 function renderState() {
 
 }
 
-// Bring it on home
+// Launch codes (top secret)
 function initGame() {
 
 }
