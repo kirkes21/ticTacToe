@@ -29,12 +29,14 @@ h3 {
 
 
 /* board spacing */
-#board {
+table {
     table-layout: fixed;
     width: 200px;
     border-collapse: collapse;
     border: 5px solid black;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
 td {

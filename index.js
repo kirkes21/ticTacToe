@@ -3,7 +3,6 @@ const gameState = {
   players: ['x', 'o'],
   p1Score: 0,
   p2Score: 0,
-  status: 'Enter name(s) and choose a mode.'
 }
 
 // Listeners
@@ -20,8 +19,6 @@ function get1PName() {
   let p1Name = document.getElementById('p1NameEntry').value
   document.getElementById('p1NameDisplay').innerText = p1Name
   document.getElementById('p2NameDisplay').innerText = 'Computer'
-
-  hideInputs()
 }
 
 function get2PNames() {
@@ -29,24 +26,29 @@ function get2PNames() {
   document.getElementById('p1NameDisplay').innerText = p1Name
   let p2Name = document.getElementById('p2NameEntry').value
   document.getElementById('p2NameDisplay').innerText = p2Name
-  
-  hideInputs()
 }
     
 function start1PGame() {
   get1PName()
+  hideInputs()
+  statusPlaying()
 }
 
 function start2PGame() {
   get2PNames()
+  hideInputs()
+  statusPlaying()
+}
+
+function statusPlaying() {
+  document.getElementById('gameStatus').innerText = 'playing'
 }
 
 // connect to reset button
 function resetGame() {
-  gameState = {
-    players: ['o', 'x'],
-    status: 'playing'
-  }
+  gameState.players = ['o', 'x']
+  statusPlaying()
+}
 }
 
 // Render board
