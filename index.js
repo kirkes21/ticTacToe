@@ -121,7 +121,7 @@ function checkTie() {
     }
   }
   if (result === true) {
-    document.getElementById("gameStatus").innerText = "Tie..."
+    document.getElementById("gameStatus").innerText = "Tie... impressive."
   }
 }
 
