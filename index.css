@@ -1,5 +1,14 @@
-h1, h2, #name-entry, #buttons, #frame, #scoreboard, #board {
+body {
+    background-color: lightgray;
     text-align: center;
+}
+
+span {
+    font-weight: lighter;
+}
+
+#start1P {
+    margin-right: 5px;
 }
 
 #name-entry {
@@ -20,11 +29,11 @@ h3 {
 }
 
 .col2, .col3 {
-    border-left: 2px solid black
+    border-left: 2px solid black;
 }
 
 #r1, #r2 {
-    border-bottom: 2px solid black
+    border-bottom: 2px solid black;
 }
 
 
@@ -40,6 +49,7 @@ table {
   }
   
 td {
-    padding: 20px;
+    width: 60px;
+    height: 60px;
   }
   

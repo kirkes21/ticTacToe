@@ -33,26 +33,26 @@
         <div id="scoreboard">
             <h3>P1 Score: <span id="p1ScoreDisplay"></span></h3>
             <h3>P2 Score: <span id="p2ScoreDisplay"></span></h3>
-            <h3>Status: <span id="gameStatus"></span></h3>
+            <h3>Status: <span id="gameStatus">Enter names and choose mode</span></h3>
         </div>
-        <div id="resetDiv">
+        <div>
             <button id="reset" onclick="resetGame()">Reset (keep score)</button>
         </div>
-        <table>
+        <table id="board">
             <tr id="r1">
-                <td class="cell col1" id="cell1">test</td>
-                <td class="cell col2" id="cell2">test</td>
-                <td class="cell col3" id="cell3">test</td>
+                <td class="col1" id="c1" onclick="checkCell(this)"></td>
+                <td class="col2" id="c2" onclick="checkCell(this)"></td>
+                <td class="col3" id="c3" onclick="checkCell(this)"></td>
             </tr>
             <tr id="r2">
-                <td class="cell col1" id="cell4">test</td>
-                <td class="cell col2" id="cell5">test</td>
-                <td class="cell col3" id="cell6">test</td>
+                <td class="col1" id="c4" onclick="checkCell(this)"></td>
+                <td class="col2" id="c5" onclick="checkCell(this)"></td>
+                <td class="col3" id="c6" onclick="checkCell(this)"></td>
             </tr>
             <tr id="r3">
-                <td class="cell col1" id="cell7">test</td>
-                <td class="cell col2" id="cell8">test</td>
-                <td class="cell col3" id="cell9">test</td>
+                <td class="col1" id="c7" onclick="checkCell(this)"></td>
+                <td class="col2" id="c8" onclick="checkCell(this)"></td>
+                <td class="col3" id="c9" onclick="checkCell(this)"></td>
             </tr>
         </table>
     </div>
