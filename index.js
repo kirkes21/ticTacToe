@@ -8,6 +8,7 @@ const gameState = {
 let p1Name
 let p2Name
 
+// Hide game info until game start
 let nameDisplay = document.getElementById("nameDisplay")
 nameDisplay.style.display = "none"
 
@@ -20,8 +21,9 @@ resetButton.style.display = "none"
 let board = document.getElementById("board")
 board.style.display = "none"
 
+
 // Menu and start/reset game
-// hide input fields
+  // hide input fields
 function hideInputs() {
   let nameInputs = document.getElementById("name-entry")
   nameInputs.style.display = "none"
@@ -35,14 +37,14 @@ function hideInputs() {
   board.style.display = "block"
 }
 
-// display P1 name and name P2 'Computer'
+  // display P1 name and name P2 'Computer'
 function get1PName() {
   p1Name = document.getElementById("p1NameEntry").value
   document.getElementById("p1NameDisplay").innerText = p1Name
   document.getElementById("p2NameDisplay").innerText = p2Name
 }
 
-// display both player names
+  // display both player names
 function get2PNames() {
   p1Name = document.getElementById("p1NameEntry").value
   document.getElementById("p1NameDisplay").innerText = p1Name
@@ -50,15 +52,16 @@ function get2PNames() {
   document.getElementById("p2NameDisplay").innerText = p2Name
 }
 
+  // click 1P button
 function start1PGame() {
-  p2Name = 'Computer'
+  p2Name = "Computer"
   get1PName()
   hideInputs()
   statusPlaying()
   displayScores()
-  
 }
 
+  //click 2P button
 function start2PGame() {
   get2PNames()
   hideInputs()
@@ -66,6 +69,7 @@ function start2PGame() {
   displayScores()
 }
 
+// Display "Playing" status and show scoreboard
 function statusPlaying() {
   document.getElementById("gameStatus").innerText = "Playing"
 }
@@ -75,6 +79,7 @@ function displayScores() {
   document.getElementById("p2ScoreDisplay").innerText = gameState.p2Score
 }
 
+// For reset
 function clearBoard() {
   let rows = document.getElementsByTagName("tr")
   let cells
@@ -87,22 +92,21 @@ function clearBoard() {
   }
 }
 
+// reset and keep scores
 function resetGame() {
   statusPlaying()
   clearBoard()
   gameState.pieces = ["X", "O"]
-  document.getElementById('board').style.pointerEvents = 'auto'
+  document.getElementById("board").style.pointerEvents = "auto"
 }
 
 // Board Listeners
-function switchPlayers() {
+  // Swap Players
+function switchPiece() {
   gameState.pieces.reverse()
 }
 
-function gameTie() {
-  document.getElementById("gameStatus").innerText = "Tie..."
-}
-
+  // Tie: board is full after checking for win
 function checkTie() {
   let rows = document.getElementsByTagName("tr")
   let cells
@@ -117,24 +121,27 @@ function checkTie() {
     }
   }
   if (result === true) {
-    gameTie()
+    document.getElementById("gameStatus").innerText = "Tie..."
   }
 }
 
+// X wins, freeze board
 function p1Wins() {
   document.getElementById("gameStatus").innerText = `${p1Name} wins!`
   gameState.p1Score++
   displayScores()
-  document.getElementById('board').style.pointerEvents = 'none'
+  document.getElementById("board").style.pointerEvents = "none"
 }
 
+// O wins, freeze board
 function p2Wins() {
   document.getElementById("gameStatus").innerText = `${p2Name} wins!`
   gameState.p2Score++
   displayScores()
-  document.getElementById('board').style.pointerEvents = 'none'
+  document.getElementById("board").style.pointerEvents = "none"
 }
 
+// Helper to check win state
 function checkWin(cellGroup) {
   let p1Win = true
 
@@ -161,6 +168,7 @@ function checkWin(cellGroup) {
   }
 }
 
+// Did the last move result in a win?
 function checkAllWins() {
   let row1 = document.getElementsByClassName("row1")
   let row2 = document.getElementsByClassName("row2")
@@ -181,13 +189,33 @@ function checkAllWins() {
   checkWin(diag2)
 }
 
+// checkCell runs when any <td> is clicked
+  // This bring together all game functionality.
+  // If playing a Computer, place an O in the first available cell
 function checkCell(cell) {
   if (cell.innerText === "") {
     cell.innerText = gameState.pieces[0]
-    switchPlayers()
+    switchPiece()
+    checkTie()
+    checkAllWins()
+  }
+  if (p2Name === "Computer") {
+    let rows = document.getElementsByTagName("tr")
+    let cells
+    let executed = false
+
+    for (let i = 0; i < rows.length; i++) {
+      cells = rows[i].getElementsByTagName("td")
+
+      for (let k = 0; k < cells.length; k++) {
+        if (!executed && cells[k].innerText === "") {
+          cells[k].innerText = gameState.pieces[0]
+          executed = true
+        }
+      }
+    }
+    switchPiece()
     checkTie()
     checkAllWins()
   }
 }
-
-// drafts

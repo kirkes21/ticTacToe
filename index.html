@@ -9,52 +9,54 @@
     <script defer src="index.js"></script>
   </head>
   <body>
-      <div id="heading">
+    <div id="heading">
       <h1>Tic-Tac-Toe™</h1>
       <h2>"The Game of Kings"</h2>
     </div>
-      <div id="name-entry">
-          <label>Enter P1 Name:
-          <input id="p1NameEntry" placeholder="Mario Mario">
-        </label>
-        <label>&nbspEnter P2 Name:
-          <input id="p2NameEntry" placeholder="Luigi Mario">
-          </label>
-        </div>
-        <div id="buttons">
-            <button id="start1P" onclick="start1PGame()">Play 1P vs. CPU</button>
-            <button id="start2P" onclick="start2PGame()">Play 1P vs. 2P</button>
-        </div>
+    <div id="name-entry">
+      <label
+        >Enter P1 Name:
+        <input id="p1NameEntry" placeholder="Mario Mario" />
+      </label>
+      <label
+        >&nbspEnter P2 Name:
+        <input id="p2NameEntry" placeholder="Luigi Mario" />
+      </label>
+    </div>
+    <div id="buttons">
+      <button id="start1P" onclick="start1PGame()">Play 1P vs. CPU</button>
+      <button id="start2P" onclick="start2PGame()">Play 1P vs. 2P</button>
+    </div>
     <div id="frame">
-        <div id="nameDisplay">
+      <div id="nameDisplay">
         <h3 id="p1Name">Player 1: <span id="p1NameDisplay"></span></h3>
         <h3>Player 2: <span id="p2NameDisplay"></span></h3>
-    </div>
-        <div id="scoreboard">
-            <h3 id="p1Score">P1 Score: <span id="p1ScoreDisplay"></span></h3>
-            <h3>P2 Score: <span id="p2ScoreDisplay"></span></h3>
-        </div>
-        <h3>Status: <span id="gameStatus">Enter names and choose mode</span></h3>
-        <div>
-            <button id="reset" onclick="resetGame()">Reset (keep score)</button>
-        </div>
-        <table id="board">
-            <tr id="r1">
-                <td class="row1 col1 diag1" onclick="checkCell(this)"></td>
-                <td class="row1 col2" onclick="checkCell(this)"></td>
-                <td class="row1 col3 diag2" onclick="checkCell(this)"></td>
-            </tr>
-            <tr id="r2">
-                <td class="row2 col1" onclick="checkCell(this)"></td>
-                <td class="row2 col2 diag1 diag2" onclick="checkCell(this)"></td>
-                <td class="row2 col3" onclick="checkCell(this)"></td>
-            </tr>
-            <tr id="r3">
-                <td class="row3 col1 diag2" onclick="checkCell(this)"></td>
-                <td class="row3 col2" onclick="checkCell(this)"></td>
-                <td class="row3 col3 diag1" onclick="checkCell(this)"></td>
-            </tr>
-        </table>
+      </div>
+      <div id="scoreboard">
+        <h3 id="p1Score">P1 Score: <span id="p1ScoreDisplay"></span></h3>
+        <h3>P2 Score: <span id="p2ScoreDisplay"></span></h3>
+      </div>
+      <h3>Status: <span id="gameStatus">Enter names and choose mode</span></h3>
+      <div>
+        <button id="reset" onclick="resetGame()">Reset (keep score)</button>
+      </div>
+      <table id="board">
+        <tr id="r1">
+          <td class="row1 col1 diag1" onclick="checkCell(this)"></td>
+          <td class="row1 col2" onclick="checkCell(this)"></td>
+          <td class="row1 col3 diag2" onclick="checkCell(this)"></td>
+        </tr>
+        <tr id="r2">
+          <td class="row2 col1" onclick="checkCell(this)"></td>
+          <td class="row2 col2 diag1 diag2" onclick="checkCell(this)"></td>
+          <td class="row2 col3" onclick="checkCell(this)"></td>
+        </tr>
+        <tr id="r3">
+          <td class="row3 col1 diag2" onclick="checkCell(this)"></td>
+          <td class="row3 col2" onclick="checkCell(this)"></td>
+          <td class="row3 col3 diag1" onclick="checkCell(this)"></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
