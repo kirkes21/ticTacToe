@@ -54,12 +54,20 @@ function displayScores() {
 }
 
 function clearBoard() {
-
+  let rows = document.getElementsByTagName('tr')
+  let cells
+  
+  for (let i = 0; i < rows.length; i++) {
+      cells = rows[i].getElementsByTagName('td')
+      for (let k = 0; k < cells.length; k++)
+      {cells[k].innerText = ''}
+  }
 }
 
 function resetGame() {
   statusPlaying()
   clearBoard()
+  gameState.pieces = ['X', 'O']
 }
 
 // Board Listeners
@@ -67,28 +75,36 @@ function switchPlayers() {
   gameState.pieces.reverse()
 }
 
-function checkTie() {
-  
+function gameTie() {
+  document.getElementById('gameStatus').innerText = 'Tie...'
 }
+
+function checkTie() {
+  let rows = document.getElementsByTagName('tr')
+  let cells
+  let result = true
+  
+  for (let i = 0; i < rows.length; i++) {
+      cells = rows[i].getElementsByTagName('td')
+      for (let k = 0; k < cells.length; k++)
+      {
+          if (cells[k].innerText === '') {
+            result = false
+          }
+      }
+  }
+  if(result === true) {
+    gameTie()
+  }
+}
+
+
 
 function checkCell(cell) {
  if(cell.innerText === '') {
    cell.innerText = gameState.pieces[0]
    switchPlayers()
+   checkTie()
  }
 }
 
-
-
-// let rows = document.getElementsByTagName('tr')
-// let cells
-
-// for (let i = 0; i < rows.length; i++) {
-//     cells = rows[i].getElementsByTagName('td')
-//     for (let k = 0; k < cells.length; k++)
-//     {
-//         cells[k].onclick=function() {
-//           cells[k].innerText = 'X'
-//         }
-//     }
-// }
