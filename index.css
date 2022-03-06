@@ -1,6 +1,9 @@
 body {
-    background-color: lightgray;
+    background-color: black;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin-bottom: 40px;
 }
 
 span {
@@ -20,20 +23,20 @@ span {
     justify-content: center;
 }
 
-h3 {
+#p1Name, #p1Score {
     margin-right: 20px;
 }
 
 .col1, .col2 {
-    border-right: 2px solid black;
+    border-right: 2px solid rgb(46, 230, 0);
 }
 
 .col2, .col3 {
-    border-left: 2px solid black;
+    border-left: 2px solid rgb(46, 230, 0);
 }
 
 #r1, #r2 {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(46, 230, 0);
 }
 
 
@@ -42,8 +45,8 @@ table {
     table-layout: fixed;
     width: 200px;
     border-collapse: collapse;
-    border: 5px solid black;
-    margin-top: 20px;
+    border: 5px solid rgb(46, 230, 0);
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -51,5 +54,9 @@ table {
 td {
     width: 60px;
     height: 60px;
+    color: rgb(46, 230, 0);
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    font-size: 34px;
   }
   
